@@ -155,9 +155,10 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
 
         if success:
             text = result["text"]
+            frame_filename = f"{path_to_save_frames}/frame_{id}.jpg"
+            cv2.imwrite(frame_filename, frame)
 
 
-            
 def s2ms(seconds):
     seconds = float(seconds)
     total_milliseconds = seconds * 1000
