@@ -245,3 +245,6 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
             mid_time_ms = s2ms(curr_frame / fps)
             start_time_ms = max(0, mid_time_ms - half_hop_ms) 
             end_time_ms = min(video_duration_ms, mid_time_ms + half_hop_ms)
+            
+            img_fname = f"frame_{id}.jpg"
+            img_fpath = os.path.join(path_to_save_frames, img_fname)
