@@ -93,7 +93,9 @@ def format_time(seconds, subtitle_format):
 
 def is_speech(result_file="./transcripts/result.json", no_speech_prob=0.5, min_duration=1.0):
     try:
-        pass
+        with open(result_file, "r", encoding="utf-8") as f:
+            result = json.load(f)
+
     except Exception as e:
         print(f"An error occurred: {e}")
         return False
