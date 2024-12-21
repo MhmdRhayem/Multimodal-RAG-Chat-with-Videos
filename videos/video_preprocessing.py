@@ -7,6 +7,10 @@ def download_video_from_url(video_url=video_url, path="./videos", filename="vide
 
         highest_res_stream = streams.order_by("resolution").desc().first()
 
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+
     except Exception as err:
         # Print the error message if an error occurs
         print(f"An error has occurred: {err}")
