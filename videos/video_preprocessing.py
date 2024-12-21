@@ -157,6 +157,16 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
             text = result["text"]
             frame_filename = f"{path_to_save_frames}/frame_{id}.jpg"
             cv2.imwrite(frame_filename, frame)
+            
+            metadata = {
+                "extracted_frame_path": frame_filename,
+                "transcript": text,
+                "video_segment_id": id,
+                "video_path": video_path,
+                "start_time_ms": start_time,
+                "mid_time_ms": mid_time,
+                "end_time_ms": end_time,
+            }
 
 
 def s2ms(seconds):
