@@ -233,3 +233,8 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
     video_duration_ms = int(total_frames / fps * 1000)  # Total duration in milliseconds
     hop = round(fps / num_of_extracted_frames_per_second)
     half_hop_ms = s2ms(hop / fps / 2)  
+    
+    curr_frame = 0
+    id = -1
+    while True:
+        ret, frame = video.read()
