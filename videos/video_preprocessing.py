@@ -226,3 +226,7 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
 
     with open(results_path, "r", encoding="utf-8") as f:
         results = json.load(f)
+        
+    metadatas = []
+    fps = video.get(cv2.CAP_PROP_FPS)
+    total_frames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
