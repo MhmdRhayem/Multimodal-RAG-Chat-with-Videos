@@ -38,4 +38,8 @@ def clip_embedder(index_search="image"):
         def embed_image_text_pairs(self, texts, images, batch_size=2):
             assert len(texts) == len(images), "The length of captions should be equal to the length of images"
 
+            embeddings = []
+            for text, image_path in tqdm(zip(texts, images), total=len(texts)):
+                text = self.truncate_text(text)
+
     return CLIPEmbedder()
