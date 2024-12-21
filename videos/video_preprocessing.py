@@ -129,3 +129,6 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
     
     if not os.path.exists(path_to_save_metadata):
         os.makedirs(path_to_save_metadata)
+        
+    # Load Video
+    video = cv2.VideoCapture(video_path)
