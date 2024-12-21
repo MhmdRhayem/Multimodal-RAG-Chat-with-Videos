@@ -106,7 +106,7 @@ def bridgetower_embedder():
                 with torch.no_grad():
                     outputs = self.model(**inputs)
                 embedding = outputs.cross_embeds.squeeze(0).tolist()
-
+                embeddings.append(embedding)
             return embeddings
         
     return BridgeTowerEmbedder()
