@@ -90,3 +90,6 @@ def format_time(seconds, subtitle_format):
         return f"{hours:02}:{minutes:02}:{int(seconds):02},{milliseconds:03}"
     elif subtitle_format == "vtt":
         return f"{hours:02}:{minutes:02}:{int(seconds):02}.{milliseconds:03}"
+
+def is_speech(result_file="./transcripts/result.json", no_speech_prob=0.5, min_duration=1.0):
+    pass
