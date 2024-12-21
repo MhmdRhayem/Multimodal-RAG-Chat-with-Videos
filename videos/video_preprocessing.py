@@ -102,7 +102,8 @@ def is_speech(result_file="./videos/result.json", no_speech_prob=0.5, min_durati
         
         for segment in segments:
             duration = segment["end"] - segment["start"]
-
+            if duration >= min_duration and segment["no_speech_prob"] <= no_speech_prob:
+                speech_count += 1
     except Exception as e:
         print(f"An error occurred: {e}")
         return False
