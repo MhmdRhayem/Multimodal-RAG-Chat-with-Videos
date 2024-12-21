@@ -139,3 +139,7 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
     
     with open(results_path, "r", encoding="utf-8") as f:
         results = json.load(f)
+        
+    metadatas = []
+    for result in results["segments"]:
+        pass
