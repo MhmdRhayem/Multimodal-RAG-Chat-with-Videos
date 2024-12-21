@@ -73,4 +73,7 @@ def format_time(seconds, subtitle_format):
     seconds = seconds % 60
     milliseconds = int((seconds - int(seconds)) * 1000)
     
-    
+    if subtitle_format == "srt":
+        return f"{hours:02}:{minutes:02}:{int(seconds):02},{milliseconds:03}"
+    elif subtitle_format == "vtt":
+        return f"{hours:02}:{minutes:02}:{int(seconds):02}.{milliseconds:03}"
