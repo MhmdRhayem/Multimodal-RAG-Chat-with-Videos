@@ -11,6 +11,6 @@ def clip_embedder(index_search="image"):
             self.max_length = 77  # Maximum token length for CLIP text input
     
         def truncate_text(self, text):
-            pass
+            inputs = self.processor.tokenizer(text, return_tensors="pt", truncation=False)
 
     return CLIPEmbedder()
