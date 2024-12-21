@@ -57,7 +57,7 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
 
         extension = "srt" if subtitle_format == "srt" else "vtt"
         
-        
+        subtitle_file = os.path.join(subtitle_path, f"subtitles.{extension}")
     except Exception as e:
         print(f"An error occurred: {e}")
 
