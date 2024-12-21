@@ -240,3 +240,5 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
         ret, frame = video.read()
         if not ret:
             break
+        if curr_frame % hop == 0:
+            id += 1
