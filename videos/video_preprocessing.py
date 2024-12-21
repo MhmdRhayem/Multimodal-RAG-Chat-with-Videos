@@ -255,3 +255,11 @@ def get_image_description_ollama(image_path):
     These summaries will be embedded and used to retrieve the raw image.
     Write a clear and concise summary that captures all the important information"""
     message = {"role": "user", "content": content, "images": [image_path]}
+    
+    try:
+        response = ollama.chat(model="llava:7b", messages=[message])
+        description = response["message"]["content"]
+        return description
+    except Exception as e:
+        print(f"Error: {e}")
+        return "No description available."
