@@ -23,9 +23,11 @@ def download_video_from_url(video_url=video_url, path="./videos", filename="vide
 
 
 def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_format="srt", save_segments=True):
-    try:
-        pass
-    except Exception as e:
 
+    try:
+        subtitle_path = "./subtitles"
+        results_path = "./videos"
+        
+    except Exception as e:
         print(f"An error occurred: {e}")
 
