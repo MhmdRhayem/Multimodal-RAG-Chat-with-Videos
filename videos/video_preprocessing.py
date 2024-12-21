@@ -132,3 +132,7 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
         
     # Load Video
     video = cv2.VideoCapture(video_path)
+
+    if not video.isOpened():
+        print("Error: Cannot open video file.")
+        return
