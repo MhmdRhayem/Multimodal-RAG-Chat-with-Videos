@@ -184,6 +184,9 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
 
     with open(metadata_file, "w", encoding="utf-8") as metadata_file:
         json.dump(metadatas, metadata_file, indent=4)
+        
+    print("Frames and metadata extraction complete.")
+    return metadatas
 
 
 def s2ms(seconds):
