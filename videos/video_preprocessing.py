@@ -230,3 +230,4 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
     metadatas = []
     fps = video.get(cv2.CAP_PROP_FPS)
     total_frames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+    video_duration_ms = int(total_frames / fps * 1000)  # Total duration in milliseconds
