@@ -153,6 +153,11 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
         # Read the frame at mid_time
         success, frame = video.read()
 
+        if success:
+            text = result["text"]
+
+
+            
 def s2ms(seconds):
     seconds = float(seconds)
     total_milliseconds = seconds * 1000
