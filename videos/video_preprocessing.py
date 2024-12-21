@@ -251,4 +251,6 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
             cv2.imwrite(img_fpath, image)
             
 def get_image_description_ollama(image_path):
-    pass
+    content = """You are an assistant tasked with summarizing images for optimal retrieval. \
+    These summaries will be embedded and used to retrieve the raw image.
+    Write a clear and concise summary that captures all the important information"""
