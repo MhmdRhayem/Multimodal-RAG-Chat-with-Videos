@@ -10,6 +10,8 @@ def download_video_from_url(video_url=video_url, path="./videos", filename="vide
         if not os.path.exists(path):
             os.makedirs(path)
 
+        highest_res_stream.download(output_path=path, filename=filename)
+        print(f"Download is completed successfully. File saved as {path}/{filename}")
 
     except Exception as err:
         # Print the error message if an error occurs
