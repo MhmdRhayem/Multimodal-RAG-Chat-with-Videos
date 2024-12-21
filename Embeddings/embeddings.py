@@ -23,5 +23,7 @@ def clip_embedder(index_search="image"):
 
         def embed_documents(self, texts):
             embeddings = []
+            for text in texts:
+                text = self.truncate_text(text)
 
     return CLIPEmbedder()
