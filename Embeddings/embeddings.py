@@ -14,5 +14,11 @@ def clip_embedder(index_search="image"):
             inputs = self.processor.tokenizer(text, return_tensors="pt", truncation=False)
             input_ids = inputs["input_ids"][0]
             original_length = len(input_ids)
+            if original_length > self.max_length:
+                truncated_ids = input_ids[:self.max_length]
+                truncated_text = self.processor.tokenizer.decode(truncated_ids, skip_special_tokens=True)
+                print(f"Text truncated from {original_length} tokens to {self.max_length} tokens.")
+                return truncated_text
+            return text
 
     return CLIPEmbedder()
