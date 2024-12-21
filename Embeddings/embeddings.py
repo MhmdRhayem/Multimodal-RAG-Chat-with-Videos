@@ -58,3 +58,6 @@ def clip_embedder(index_search="image"):
             return embeddings
 
     return CLIPEmbedder()
+
+def bridgetower_embedder():
+    pass
