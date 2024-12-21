@@ -172,6 +172,7 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
         else:
             print(f"ERROR! Cannot extract frame: id = {id}")
 
+        video.release()
 
 
 def s2ms(seconds):
