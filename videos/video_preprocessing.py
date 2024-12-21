@@ -64,7 +64,8 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
                 start_time = format_time(segment["start"], subtitle_format)
                 end_time = format_time(segment["end"], subtitle_format)
         
-        
     except Exception as e:
         print(f"An error occurred: {e}")
 
+def format_time(seconds, subtitle_format):
+    pass
