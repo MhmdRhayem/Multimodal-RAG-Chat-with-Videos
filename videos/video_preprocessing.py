@@ -150,6 +150,8 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
         # Set video position to mid_time
         video.set(cv2.CAP_PROP_POS_MSEC, mid_time)
 
+        # Read the frame at mid_time
+        success, frame = video.read()
 
 def s2ms(seconds):
     seconds = float(seconds)
