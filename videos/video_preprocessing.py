@@ -242,3 +242,6 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
             break
         if curr_frame % hop == 0:
             id += 1
+            mid_time_ms = s2ms(curr_frame / fps)
+            start_time_ms = max(0, mid_time_ms - half_hop_ms) 
+            end_time_ms = min(video_duration_ms, mid_time_ms + half_hop_ms)
