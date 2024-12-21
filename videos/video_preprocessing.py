@@ -68,4 +68,9 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
         print(f"An error occurred: {e}")
 
 def format_time(seconds, subtitle_format):
-    pass
+    hours = int(seconds // 3600)
+    minutes = int((seconds % 3600) // 60)
+    seconds = seconds % 60
+    milliseconds = int((seconds - int(seconds)) * 1000)
+    
+    
