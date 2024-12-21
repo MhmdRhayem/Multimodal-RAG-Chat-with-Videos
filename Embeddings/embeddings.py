@@ -44,5 +44,11 @@ def clip_embedder(index_search="image"):
                 image = Image.open(image_path).convert("RGB")
                 inputs = self.processor(text=[text], images=[image], return_tensors="pt", padding=True, truncation=True, max_length=self.max_length)
                 inputs = {key: val.to(self.device) for key, val in inputs.items()}
+                
+                with torch.no_grad():
+                    outputs = self.model(**inputs)
+
+                text_embeddings = outputs.text_embeds[0].tolist()
+                image_embeddings = outputs.image_embeds[0].tolist()
 
     return CLIPEmbedder()
