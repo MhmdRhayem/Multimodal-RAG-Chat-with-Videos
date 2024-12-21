@@ -120,4 +120,5 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
     path_to_save_frames = "./videos/extracted_frames"
     path_to_save_metadata = "./videos/metadata"
     
-    
+    if os.path.exists(path_to_save_frames):
+        shutil.rmtree(path_to_save_frames)
