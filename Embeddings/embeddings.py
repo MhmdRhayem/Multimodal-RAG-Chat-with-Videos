@@ -94,6 +94,9 @@ def bridgetower_embedder():
             assert len(texts) == len(images), "The length of captions should be equal to the length of images"
 
             embeddings = []
+            for text, image_path in tqdm(zip(texts, images), total=len(texts)):
+                image_input = Image.open(image_path).convert("RGB")
+
             return embeddings
         
     return BridgeTowerEmbedder()
