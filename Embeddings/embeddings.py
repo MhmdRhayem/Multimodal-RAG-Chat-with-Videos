@@ -1,5 +1,9 @@
 import torch
 from transformers import CLIPProcessor, CLIPModel
+from transformers import BridgeTowerProcessor, BridgeTowerModel, BridgeTowerForContrastiveLearning
+from PIL import Image
+from langchain_core.embeddings import Embeddings
+from tqdm import tqdm
 
 def clip_embedder(index_search="image"):
     class CLIPEmbedder(Embeddings):
