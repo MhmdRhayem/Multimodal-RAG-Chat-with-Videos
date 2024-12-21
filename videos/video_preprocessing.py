@@ -168,6 +168,10 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
                 "end_time_ms": end_time,
             }
             metadatas.append(metadata)
+            
+        else:
+            print(f"ERROR! Cannot extract frame: id = {id}")
+
 
 
 def s2ms(seconds):
