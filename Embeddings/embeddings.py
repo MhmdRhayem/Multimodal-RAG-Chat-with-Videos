@@ -70,4 +70,8 @@ def bridgetower_embedder():
             self.model = BridgeTowerForContrastiveLearning.from_pretrained("BridgeTower/bridgetower-large-itm-mlm-itc")
             self.processor = BridgeTowerProcessor.from_pretrained("BridgeTower/bridgetower-large-itm-mlm-itc")   
 
+        def embed_documents(self, texts):
+            embeddings = []
+            return embeddings
+        
     return BridgeTowerEmbedder()
