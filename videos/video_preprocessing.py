@@ -9,7 +9,8 @@ import re
 import json
 import cv2
 import shutil
-import base64
+import ollama
+import torch
 
 def download_video_from_url(video_url=video_url, path="./videos", filename="video.mp4"):
     try:
@@ -204,3 +205,4 @@ def augment_transcripts(trans_arr, n=7):
         for i in range(len(trans_arr))
     ]
     return updated_trans_arr
+
