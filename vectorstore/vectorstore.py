@@ -58,3 +58,12 @@ class MultimodalLanceDB(LanceDB):
             mode = kwargs["mode"]
         else:
             mode = self.mode
+        if self._table_name in self._connection.table_names():
+            tbl = self._connection.open_table(self._table_name)
+            if self.api_key is None:
+                tbl.add(docs, mode=mode)
+            else:
+                tbl.add(docs)
+        else:
+            self._connection.create_table(self._table_name, data=docs)
+        return ids
