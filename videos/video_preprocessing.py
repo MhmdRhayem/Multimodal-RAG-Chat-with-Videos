@@ -142,4 +142,6 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
         
     metadatas = []
     for result in results["segments"]:
-        pass
+        id = result["id"]
+        
+        
