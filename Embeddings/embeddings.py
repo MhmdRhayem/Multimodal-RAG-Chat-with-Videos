@@ -72,6 +72,15 @@ def bridgetower_embedder():
 
         def embed_documents(self, texts):
             embeddings = []
+            for text in texts:
+                dummy_image = Image.new("RGB", (224, 224), color="white")
+                inputs = self.processor(
+                    text=text,
+                    images=dummy_image,
+                    return_tensors="pt",
+                    padding=True,
+                    truncation=True,
+                )
             return embeddings
         
     return BridgeTowerEmbedder()
