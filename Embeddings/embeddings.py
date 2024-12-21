@@ -9,5 +9,8 @@ def clip_embedder(index_search="image"):
             self.model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(self.device)
             self.processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
             self.max_length = 77  # Maximum token length for CLIP text input
+    
+        def truncate_text(self, text):
+            pass
 
     return CLIPEmbedder()
