@@ -7,6 +7,9 @@ import whisper
 from moviepy import VideoFileClip
 import re
 import json
+import cv2
+import shutil
+import base64
 
 def download_video_from_url(video_url=video_url, path="./videos", filename="video.mp4"):
     try:
