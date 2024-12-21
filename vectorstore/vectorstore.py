@@ -67,3 +67,32 @@ class MultimodalLanceDB(LanceDB):
         else:
             self._connection.create_table(self._table_name, data=docs)
         return ids
+
+    @classmethod
+    def from_text_image_pairs(
+        cls,
+        texts: List[str],
+        image_paths: List[str],
+        embedding: Embeddings,
+        metadatas: Optional[List[dict]] = None,
+        connection: Any = None,
+        vector_key: Optional[str] = "vector",
+        id_key: Optional[str] = "id",
+        text_key: Optional[str] = "text",
+        image_path_key: Optional[str] = "extracted_frame_path",
+        table_name: Optional[str] = "MULTIRAGTABLE",
+        **kwargs: Any,
+    ):
+
+        instance = MultimodalLanceDB(
+            connection=connection,
+            embedding=embedding,
+            vector_key=vector_key,
+            id_key=id_key,
+            text_key=text_key,
+            image_path_key=image_path_key,
+            table_name=table_name,
+        )
+        instance.add_text_image_pairs(texts, image_paths, metadatas=metadatas, **kwargs)
+
+        return instance
