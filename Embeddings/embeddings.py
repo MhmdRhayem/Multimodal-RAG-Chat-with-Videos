@@ -42,5 +42,7 @@ def clip_embedder(index_search="image"):
             for text, image_path in tqdm(zip(texts, images), total=len(texts)):
                 text = self.truncate_text(text)
                 image = Image.open(image_path).convert("RGB")
+                inputs = self.processor(text=[text], images=[image], return_tensors="pt", padding=True, truncation=True, max_length=self.max_length)
+                inputs = {key: val.to(self.device) for key, val in inputs.items()}
 
     return CLIPEmbedder()
