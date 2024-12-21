@@ -50,5 +50,11 @@ def clip_embedder(index_search="image"):
 
                 text_embeddings = outputs.text_embeds[0].tolist()
                 image_embeddings = outputs.image_embeds[0].tolist()
+                if index_search == "image":
+                    embedding = image_embeddings
+                else:
+                    embedding = text_embeddings
+                embeddings.append(embedding)
+            return embeddings
 
     return CLIPEmbedder()
