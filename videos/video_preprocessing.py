@@ -143,5 +143,9 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
     metadatas = []
     for result in results["segments"]:
         id = result["id"]
-        
+
+def s2ms(seconds):
+    seconds = float(seconds)
+    total_milliseconds = seconds * 1000
+    return total_milliseconds
         
