@@ -96,6 +96,9 @@ def is_speech(result_file="./videos/result.json", no_speech_prob=0.5, min_durati
         with open(result_file, "r", encoding="utf-8") as f:
             result = json.load(f)
 
+        segments = result["segments"]
+        
+        
     except Exception as e:
         print(f"An error occurred: {e}")
         return False
