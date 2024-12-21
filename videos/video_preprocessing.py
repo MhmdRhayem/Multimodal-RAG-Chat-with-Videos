@@ -172,13 +172,18 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
         else:
             print(f"ERROR! Cannot extract frame: id = {id}")
 
-        video.release()
+    video.release()
+    
+    transcripts = [vid["transcript"] for vid in metadatas]
+    augmented_transcripts = augment_transcripts(transcripts, n=7)
+    
+    for idx, metadata in enumerate(metadatas):
+        metadata["text"] = augmented_transcripts[idx]
         
-        transcripts = [vid["transcript"] for vid in metadatas]
-        augmented_transcripts = augment_transcripts(transcripts, n=7)
-        
-        for idx, metadata in enumerate(metadatas):
-            metadata["text"] = augmented_transcripts[idx]
+    metadata_file = os.path.join(path_to_save_metadata, "metadata.json")
+
+    with open(metadata_file, "w", encoding="utf-8") as metadata_file:
+        json.dump(metadatas, metadata_file, indent=4)
 
 
 def s2ms(seconds):
