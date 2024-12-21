@@ -29,5 +29,7 @@ def clip_embedder(index_search="image"):
                 with torch.no_grad():
                     outputs = self.model.get_text_features(**inputs)
                 embedding = outputs.tolist()
+                embeddings.append(embedding[0])
+            return embeddings
 
     return CLIPEmbedder()
