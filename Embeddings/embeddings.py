@@ -25,5 +25,9 @@ def clip_embedder(index_search="image"):
             embeddings = []
             for text in texts:
                 text = self.truncate_text(text)
+                inputs = self.processor(text=text, return_tensors="pt", padding=True, truncation=True, max_length=self.max_length).to(self.device)
+                with torch.no_grad():
+                    outputs = self.model.get_text_features(**inputs)
+                embedding = outputs.tolist()
 
     return CLIPEmbedder()
