@@ -21,4 +21,7 @@ def clip_embedder(index_search="image"):
                 return truncated_text
             return text
 
+        def embed_documents(self, texts):
+            pass
+
     return CLIPEmbedder()
