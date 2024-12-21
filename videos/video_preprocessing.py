@@ -50,6 +50,8 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
         print("Transcribing audio using Whisper...")
         result = model.transcribe(audio_path)
         
+        results_file = os.path.join(results_path, "transcript.txt")
+        
     except Exception as e:
         print(f"An error occurred: {e}")
 
