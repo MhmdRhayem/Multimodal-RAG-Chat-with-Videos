@@ -96,6 +96,13 @@ def bridgetower_embedder():
             embeddings = []
             for text, image_path in tqdm(zip(texts, images), total=len(texts)):
                 image_input = Image.open(image_path).convert("RGB")
+                inputs = self.processor(
+                    text=text,
+                    images=image_input,
+                    return_tensors="pt",
+                    padding=True,
+                    truncation=True,
+                )
 
             return embeddings
         
