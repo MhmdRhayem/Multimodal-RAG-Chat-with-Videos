@@ -42,3 +42,15 @@ class MultimodalLanceDB(LanceDB):
         assert len(texts) == len(image_paths), "the len of transcripts should be equal to the len of images"
         docs = []
         embeddings = self._embedding.embed_image_text_pairs(texts=list(texts), images=list(image_paths))
+        for idx, text in enumerate(texts):
+            embedding = embeddings[idx]
+            metadata = metadatas[idx] if metadatas else {"video_segment_id": idx}
+            docs.append(
+                {
+                    self._vector_key: embedding,
+                    self._id_key: idx,
+                    self._text_key: text,
+                    self._image_path_key: image_paths[idx],
+                    "metadata": metadata,
+                }
+            )
