@@ -81,6 +81,10 @@ def bridgetower_embedder():
                     padding=True,
                     truncation=True,
                 )
+                with torch.no_grad():
+                    outputs = self.model(**inputs)
+                embedding = outputs.text_embeds
+                embeddings.append(embedding[0].tolist())
             return embeddings
         
     return BridgeTowerEmbedder()
