@@ -62,6 +62,7 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
         with open(subtitle_file, "w", encoding="utf-8") as f:
             for i, segment in enumerate(result["segments"]):
                 start_time = format_time(segment["start"], subtitle_format)
+                end_time = format_time(segment["end"], subtitle_format)
         
         
     except Exception as e:
