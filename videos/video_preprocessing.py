@@ -106,10 +106,12 @@ def is_speech(result_file="./videos/result.json", no_speech_prob=0.5, min_durati
                 speech_count += 1
 
         if speech_count > len(result["segments"]) / 2:
-
             print(f"Speech detected.")
-
             return True
+        else:
+            print("No valid speech detected in transcript.")
+            return False
+        
     except Exception as e:
         print(f"An error occurred: {e}")
         return False
