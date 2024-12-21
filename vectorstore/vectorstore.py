@@ -40,3 +40,5 @@ class MultimodalLanceDB(LanceDB):
         **kwargs: Any,
     ):
         assert len(texts) == len(image_paths), "the len of transcripts should be equal to the len of images"
+        docs = []
+        embeddings = self._embedding.embed_image_text_pairs(texts=list(texts), images=list(image_paths))
