@@ -32,6 +32,11 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
             os.makedirs(subtitle_path)
         
         audio_path = "./audio/audio.mp3"
+        
+        if not os.path.exists(os.path.dirname(audio_path)):
+            os.makedirs(os.path.dirname(audio_path))
+        
+        
     except Exception as e:
         print(f"An error occurred: {e}")
 
