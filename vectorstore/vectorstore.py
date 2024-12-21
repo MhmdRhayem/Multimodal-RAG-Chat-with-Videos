@@ -54,3 +54,7 @@ class MultimodalLanceDB(LanceDB):
                     "metadata": metadata,
                 }
             )
+        if "mode" in kwargs:
+            mode = kwargs["mode"]
+        else:
+            mode = self.mode
