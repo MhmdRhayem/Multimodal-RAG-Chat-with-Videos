@@ -223,3 +223,6 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
     if not video.isOpened():
         print("Error: Cannot open video file.")
         return
+
+    with open(results_path, "r", encoding="utf-8") as f:
+        results = json.load(f)
