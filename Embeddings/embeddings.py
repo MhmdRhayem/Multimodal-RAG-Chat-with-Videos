@@ -1,6 +1,6 @@
 import torch
 from transformers import CLIPProcessor, CLIPModel
-from transformers import BridgeTowerProcessor, BridgeTowerModel, BridgeTowerForContrastiveLearning
+from transformers import BridgeTowerProcessor, BridgeTowerForContrastiveLearning
 from PIL import Image
 from langchain_core.embeddings import Embeddings
 from tqdm import tqdm
@@ -65,5 +65,9 @@ def clip_embedder(index_search="image"):
 
 def bridgetower_embedder():
     class BridgeTowerEmbedder(Embeddings):
-        pass
+        def __init__(self):
+            super().__init__()
+            self.model = BridgeTowerForContrastiveLearning.from_pretrained("BridgeTower/bridgetower-large-itm-mlm-itc")
+            self.processor = BridgeTowerProcessor.from_pretrained("BridgeTower/bridgetower-large-itm-mlm-itc")   
+
     return BridgeTowerEmbedder()
