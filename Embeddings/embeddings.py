@@ -22,6 +22,6 @@ def clip_embedder(index_search="image"):
             return text
 
         def embed_documents(self, texts):
-            pass
+            embeddings = []
 
     return CLIPEmbedder()
