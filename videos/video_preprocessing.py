@@ -52,6 +52,9 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
         
         results_file = os.path.join(results_path, "results.json")
         
+        with open(result_file, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=4)
+        
     except Exception as e:
         print(f"An error occurred: {e}")
 
