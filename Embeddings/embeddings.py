@@ -31,5 +31,8 @@ def clip_embedder(index_search="image"):
                 embedding = outputs.tolist()
                 embeddings.append(embedding[0])
             return embeddings
+        
+        def embed_query(self, text: str) -> List[float]:
+            return self.embed_documents([text])[0]
 
     return CLIPEmbedder()
