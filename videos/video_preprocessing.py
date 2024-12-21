@@ -117,4 +117,7 @@ def is_speech(result_file="./videos/result.json", no_speech_prob=0.5, min_durati
         return False
     
 def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.mp4", results_path="./videos/result.json"):
-    pass
+    path_to_save_frames = "./videos/extracted_frames"
+    path_to_save_metadata = "./videos/metadata"
+    
+    
