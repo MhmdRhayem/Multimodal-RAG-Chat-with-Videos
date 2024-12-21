@@ -73,8 +73,9 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
                     if i == 0:
                         f.write("WEBVTT\n\n") 
                     f.write(f"{start_time} --> {end_time}\n")
-
                     f.write(f"{segment['text']}\n\n")
+                    
+                print(f"Subtitle generation completed successfully. Subtitles saved at {subtitle_file}")
         
     except Exception as e:
         print(f"An error occurred: {e}")
