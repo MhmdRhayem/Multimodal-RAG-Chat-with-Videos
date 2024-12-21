@@ -87,4 +87,7 @@ def bridgetower_embedder():
                 embeddings.append(embedding[0].tolist())
             return embeddings
         
+        def embed_query(self, text):
+            return self.embed_documents([text])[0]
+        
     return BridgeTowerEmbedder()
