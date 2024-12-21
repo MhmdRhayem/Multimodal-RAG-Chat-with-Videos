@@ -41,5 +41,6 @@ def clip_embedder(index_search="image"):
             embeddings = []
             for text, image_path in tqdm(zip(texts, images), total=len(texts)):
                 text = self.truncate_text(text)
+                image = Image.open(image_path).convert("RGB")
 
     return CLIPEmbedder()
