@@ -30,3 +30,13 @@ class MultimodalLanceDB(LanceDB):
             mode,
         )
         self._image_path_key = image_path_key
+
+    def add_text_image_pairs(
+        self,
+        texts,
+        image_paths,
+        metadatas=None,
+        ids=None,
+        **kwargs: Any,
+    ):
+        assert len(texts) == len(image_paths), "the len of transcripts should be equal to the len of images"
