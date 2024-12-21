@@ -34,5 +34,8 @@ def clip_embedder(index_search="image"):
         
         def embed_query(self, text: str) -> List[float]:
             return self.embed_documents([text])[0]
+        
+        def embed_image_text_pairs(self, texts, images, batch_size=2):
+            assert len(texts) == len(images), "The length of captions should be equal to the length of images"
 
     return CLIPEmbedder()
