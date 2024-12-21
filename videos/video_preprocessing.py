@@ -213,3 +213,6 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
     if os.path.exists(path_to_save_frames):
         shutil.rmtree(path_to_save_frames)
     os.makedirs(path_to_save_frames)
+    
+    if not os.path.exists(path_to_save_metadata):
+        os.makedirs(path_to_save_metadata)
