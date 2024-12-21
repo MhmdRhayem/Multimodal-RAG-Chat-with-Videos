@@ -254,3 +254,4 @@ def get_image_description_ollama(image_path):
     content = """You are an assistant tasked with summarizing images for optimal retrieval. \
     These summaries will be embedded and used to retrieve the raw image.
     Write a clear and concise summary that captures all the important information"""
+    message = {"role": "user", "content": content, "images": [image_path]}
