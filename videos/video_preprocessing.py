@@ -175,7 +175,7 @@ def extract_and_save_frames_and_metadata_with_speech(video_path="./videos/video.
         video.release()
         
         transcripts = [vid["transcript"] for vid in metadatas]
-        
+        augmented_transcripts = augment_transcripts(transcripts, n=7)
 
 
 def s2ms(seconds):
