@@ -182,4 +182,14 @@ def s2ms(seconds):
     seconds = float(seconds)
     total_milliseconds = seconds * 1000
     return total_milliseconds
-        
+
+def augment_transcripts(trans_arr, n=7):
+    updated_trans_arr = [
+        (
+            " ".join(trans_arr[i - int(n / 2) : i + int(n / 2)])
+            if i - int(n / 2) >= 0
+            else " ".join(trans_arr[0 : i + int(n / 2)])
+        )
+        for i in range(len(trans_arr))
+    ]
+    return updated_trans_arr
