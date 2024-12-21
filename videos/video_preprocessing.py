@@ -238,3 +238,5 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_
     id = -1
     while True:
         ret, frame = video.read()
+        if not ret:
+            break
