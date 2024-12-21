@@ -92,5 +92,8 @@ def bridgetower_embedder():
         
         def embed_image_text_pairs(self, texts, images, batch_size=2):
             assert len(texts) == len(images), "The length of captions should be equal to the length of images"
+
+            embeddings = []
+            return embeddings
         
     return BridgeTowerEmbedder()
