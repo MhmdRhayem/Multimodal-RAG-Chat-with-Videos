@@ -63,6 +63,11 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
             for i, segment in enumerate(result["segments"]):
                 start_time = format_time(segment["start"], subtitle_format)
                 end_time = format_time(segment["end"], subtitle_format)
+                
+                if subtitle_format == "srt":
+                    f.write(f"{i + 1}\n")
+                    f.write(f"{start_time} --> {end_time}\n")
+                    f.write(f"{segment['text']}\n\n")
         
     except Exception as e:
         print(f"An error occurred: {e}")
