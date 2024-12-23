@@ -27,5 +27,16 @@ def create_db_from_text_image_pairs(embedder_type="bridgetower"):
         
         texts = [data["text"] for data in metadata]
         image_paths = [data["extracted_frame_path"] for data in metadata]
+        
+        db = lancedb.connect("./lancedb")
+        _ = MultimodalLanceDB.from_text_image_pairs(
+            texts=texts,
+            image_paths=image_paths,
+            embedding=embedder,
+            metadatas=metadata,
+            connection=db,
+            table_name="MULTIRAGTABLE",
+            mode="overwrite",
+        )
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
