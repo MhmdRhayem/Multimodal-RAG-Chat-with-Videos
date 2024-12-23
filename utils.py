@@ -72,3 +72,11 @@ def retreive_results(table, embedder, query):
         return results
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+# Chain Components
+def prompt_processing(input):
+    # Get the retrieved results and user's query
+    retrieved_results = input['retrieved_results']
+    user_query = input['user_query']
+    
+
