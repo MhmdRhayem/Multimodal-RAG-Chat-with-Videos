@@ -94,4 +94,15 @@ def prompt_processing(input):
             transcript=transcript, 
             user_query=user_query
         )
-
+    message = {
+        "role": "user",
+        "content": prompt,
+        "images": [frame_path]
+    }
+    midtime = retrieved_metadata["mid_time_ms"]
+    answer = {
+        "message": message,
+        "midtime": midtime
+    }
+    print("Done Processing Prompt")
+    return answer
