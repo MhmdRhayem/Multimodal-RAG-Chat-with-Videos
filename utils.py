@@ -14,6 +14,8 @@ def create_embedder(embedder_type="bridgetower"):
 
 def get_metadata():
     try:
-        pass
+        with open("./videos/metadata/metadata.json") as f:
+            metadata = json.load(f)
+        return metadata
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
