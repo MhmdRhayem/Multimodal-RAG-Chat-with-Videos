@@ -18,6 +18,7 @@ def get_metadata():
     try:
         with open("./videos/metadata/metadata.json") as f:
             metadata = json.load(f)
+        print("Metadata loaded successfully.")
         return metadata
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
