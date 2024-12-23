@@ -106,3 +106,6 @@ def prompt_processing(input):
     }
     print("Done Processing Prompt")
     return answer
+
+def LVLM(input):
+    pass
