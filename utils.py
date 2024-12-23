@@ -13,4 +13,7 @@ def create_embedder(embedder_type="bridgetower"):
         print(f"An unexpected error occurred: {e}")
 
 def get_metadata():
-    pass
+    try:
+        pass
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
