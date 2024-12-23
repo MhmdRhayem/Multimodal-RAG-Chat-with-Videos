@@ -22,6 +22,8 @@ def get_metadata():
         
 def create_db_from_text_image_pairs(embedder_type="bridgetower"):
     try:
-        pass
+        embedder = create_embedder(embedder_type)
+        metadata = get_metadata()
+        
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
