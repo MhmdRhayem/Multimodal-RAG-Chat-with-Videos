@@ -1,6 +1,11 @@
 from embeddings.embeddings import clip_embedder, bridgetower_embedder
 import pandas as pd
 import lancedb
+from langchain_core.runnables import (
+    RunnableParallel, 
+    RunnablePassthrough, 
+    RunnableLambda
+)
 
 def create_embedder(embedder_type="bridgetower"):
     try:
