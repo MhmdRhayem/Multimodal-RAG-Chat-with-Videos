@@ -4,6 +4,7 @@ from transformers import BridgeTowerProcessor, BridgeTowerForContrastiveLearning
 from PIL import Image
 from langchain_core.embeddings import Embeddings
 from tqdm import tqdm
+from typing import List
 
 def clip_embedder(index_search="image"):
     class CLIPEmbedder(Embeddings):
