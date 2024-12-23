@@ -87,3 +87,11 @@ def prompt_processing(input):
         "Try to answer that in a maximum of 3 sentences."
     )
     
+    retrieved_metadata = retrieved_result['metadata']
+    transcript = retrieved_metadata['text']
+    frame_path = retrieved_metadata['extracted_frame_path']
+    prompt = prompt_template.format(
+            transcript=transcript, 
+            user_query=user_query
+        )
+
