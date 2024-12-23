@@ -79,4 +79,11 @@ def prompt_processing(input):
     retrieved_results = input['retrieved_results']
     user_query = input['user_query']
     
-
+    retrieved_result = retrieved_results[0]
+    prompt_template = (
+        "The transcript associated with the image is '{transcript}'. "
+        "{user_query}"
+        "Don't mention anything about the image quality in your response."
+        "Try to answer that in a maximum of 3 sentences."
+    )
+    
