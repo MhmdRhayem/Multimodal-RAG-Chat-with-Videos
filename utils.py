@@ -11,6 +11,7 @@ def create_embedder(embedder_type="bridgetower"):
             return bridgetower_embedder()
         else:
             raise ValueError("Invalid embedder type. Choose from 'clip' or 'bridgetower'.")
+        print("Embedder created successfully.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
