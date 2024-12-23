@@ -1,4 +1,6 @@
 from embeddings.embeddings import clip_embedder, bridgetower_embedder
+import pandas as pd
+import lancedb
 
 def create_embedder(embedder_type="bridgetower"):
     try:
