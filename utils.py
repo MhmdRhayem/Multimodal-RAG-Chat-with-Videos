@@ -115,3 +115,14 @@ def LVLM(input):
     image = message["images"][0]
     print("Done Generating Description")
     return image, description, midtime
+
+def create_multirag_chain():
+    mm_rag_chain = (
+    RunnableParallel({
+        "retrieved_results": RunnableLambda(retreive_results), 
+        "user_query": RunnablePassthrough()
+    }) 
+    | RunnableLambda(prompt_processing)
+    | RunnableLambda(LVLM)
+)
+    return mm_rag_chain
