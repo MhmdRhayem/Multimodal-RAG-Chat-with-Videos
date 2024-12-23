@@ -52,6 +52,7 @@ def get_table_from_db():
     try:
         db = lancedb.connect("./lancedb")
         table = db.open_table("MULTIRAGTABLE")
+        print("Table loaded successfully.")
         return table
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
