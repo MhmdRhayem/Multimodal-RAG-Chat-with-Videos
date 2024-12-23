@@ -40,6 +40,7 @@ def create_db_from_text_image_pairs(embedder_type="bridgetower"):
             table_name="MULTIRAGTABLE",
             mode="overwrite",
         )
+        print("Database created successfully.")
         return True
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
