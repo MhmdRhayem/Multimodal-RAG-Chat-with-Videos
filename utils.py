@@ -44,3 +44,11 @@ def create_db_from_text_image_pairs(embedder_type="bridgetower"):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         return False
+
+def get_table_from_db():
+    try:
+        db = lancedb.connect("./lancedb")
+        table = db.open_table("MULTIRAGTABLE")
+        return table
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
