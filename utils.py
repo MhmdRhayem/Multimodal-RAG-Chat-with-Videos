@@ -11,3 +11,6 @@ def create_embedder(embedder_type="bridgetower"):
             raise ValueError("Invalid embedder type. Choose from 'clip' or 'bridgetower'.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+def get_metadata():
+    pass
