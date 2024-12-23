@@ -126,3 +126,6 @@ def create_multirag_chain():
     | RunnableLambda(LVLM)
 )
     return mm_rag_chain
+
+def generate_video_clip(timestamp_in_ms,video_path = "./videos/video.mp4", output_video = "./videos/video_temp.mp4", play_before_sec: int=3, play_after_sec: int=3):
+    pass
