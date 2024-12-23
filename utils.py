@@ -56,3 +56,9 @@ def get_table_from_db():
         return table
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+def retreive_results(embedder, query):
+    try:
+        pass
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
