@@ -57,8 +57,13 @@ def get_table_from_db():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-def retreive_results(embedder, query):
+def retreive_results(table, embedder, query):
     try:
-        pass
+        if table is None:
+            get_table_from_db()
+        query_embeddings = embedder.embed_query(query)
+        results = table.search(query_embeddings).limit(1).to_list()
+        print("Done Retreiving Results")
+        return results
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
