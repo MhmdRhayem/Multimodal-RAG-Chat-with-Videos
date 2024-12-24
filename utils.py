@@ -128,13 +128,25 @@ def create_multirag_chain():
 )
     return mm_rag_chain
 
-def generate_video_clip(timestamp_in_ms,video_path = "./videos/video.mp4", output_video = "./videos/video_temp.mp4", play_before_sec: int=3, play_after_sec: int=3):
-    timestamp_in_sec = int(float(timestamp_in_ms) / 1000)
-    print(timestamp_in_sec)
-    with VideoFileClip(video_path) as video:
-        duration = video.duration
-        start_time = max(timestamp_in_sec - play_before_sec, 0)
-        end_time = min(timestamp_in_sec + play_after_sec, duration)
-        new = video.subclipped(start_time, end_time)
-        new.write_videofile(output_video, codec="libx264", audio_codec="aac")
-    return output_video
+def generate_video(input):
+    midtime = input["midtime"]
+    video_path = "./videos/video.mp4"  # Assuming video path is fixed or can be parameterized
+    output_video_path = "./videos/video_temp.mp4"
+    play_before_sec = 3
+    play_after_sec = 3
+    input["video_path"] = video_path
+
+    try:
+        timestamp_in_sec = int(float(midtime) / 1000)
+        print(timestamp_in_sec)
+        with VideoFileClip(video_path) as video:
+            duration = video.duration
+            start_time = max(timestamp_in_sec - play_before_sec, 0)
+            end_time = min(timestamp_in_sec + play_after_sec, duration)
+            new = video.subclipped(start_time, end_time)
+            new.write_videofile(output_video_path, codec="libx264", audio_codec="aac")
+        print("Done Generating Video Clip")
+        return input
+    except Exception as e:
+        print(f"An error occurred during video generation: {e}")
+        return inp
