@@ -117,18 +117,6 @@ def LVLM(input):
     print("Done Generating Description")
     return image, description, midtime
 
-def create_multirag_chain():
-    mm_rag_chain = (
-    RunnableParallel({
-        "retrieved_results": RunnableLambda(retreive_results), 
-        "user_query": RunnablePassthrough()
-    }) 
-    | RunnableLambda(prompt_processing)
-    | RunnableLambda(LVLM)
-    | RunnableLambda(generate_video)
-)
-    return mm_rag_chain
-
 def generate_video(input):
     midtime = input["midtime"]
     video_path = "./videos/video.mp4"  # Assuming video path is fixed or can be parameterized
@@ -151,3 +139,15 @@ def generate_video(input):
     except Exception as e:
         print(f"An error occurred during video generation: {e}")
         return input
+
+def create_multirag_chain():
+    mm_rag_chain = (
+    RunnableParallel({
+        "retrieved_results": RunnableLambda(retreive_results), 
+        "user_query": RunnablePassthrough()
+    }) 
+    | RunnableLambda(prompt_processing)
+    | RunnableLambda(LVLM)
+    | RunnableLambda(generate_video)
+)
+    return mm_rag_chain
