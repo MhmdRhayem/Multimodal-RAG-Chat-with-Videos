@@ -149,4 +149,4 @@ def generate_video(input):
         return input
     except Exception as e:
         print(f"An error occurred during video generation: {e}")
-        return inp
+        return input
