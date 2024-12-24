@@ -10,8 +10,10 @@ from langchain_core.runnables import (
 def create_embedder(embedding_model="bridgetower"):
     try:
         embedding_model = embedding_model.lower()
-        if embedding_model == "clip":
-            return clip_embedder()
+        if embedding_model == "clip-text":
+            return clip_embedder(index_search= "text")
+        elif embedding_model == "clip-image":
+            return clip_embedder(index_search= "image")
         elif embedding_model == "bridgetower":
             return bridgetower_embedder()
         else:
