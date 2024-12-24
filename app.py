@@ -7,3 +7,7 @@ chain = None
 embedder = None
 table = None
 
+@app.route("/select_embedding", methods=["POST"])
+def select_embedding_model():
+    pass
+
