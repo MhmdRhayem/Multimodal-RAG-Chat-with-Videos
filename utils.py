@@ -125,6 +125,7 @@ def create_multirag_chain():
     }) 
     | RunnableLambda(prompt_processing)
     | RunnableLambda(LVLM)
+    | RunnableLambda(generate_video)
 )
     return mm_rag_chain
 
