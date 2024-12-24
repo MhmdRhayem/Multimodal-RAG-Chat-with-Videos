@@ -7,12 +7,12 @@ from langchain_core.runnables import (
     RunnableLambda
 )
 
-def create_embedder(embedder_type="bridgetower"):
+def create_embedder(embedding_model="bridgetower"):
     try:
-        embedder_type = embedder_type.lower()
-        if embedder_type == "clip":
+        embedding_model = embedding_model.lower()
+        if embedding_model == "clip":
             return clip_embedder()
-        elif embedder_type == "bridgetower":
+        elif embedding_model == "bridgetower":
             return bridgetower_embedder()
         else:
             raise ValueError("Invalid embedder type. Choose from 'clip' or 'bridgetower'.")
@@ -29,9 +29,9 @@ def get_metadata():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         
-def create_db_from_text_image_pairs(embedder_type="bridgetower"):
+def create_db_from_text_image_pairs(embedding_model="bridgetower"):
     try:
-        embedder = create_embedder(embedder_type)
+        embedder = create_embedder(embedding_model)
         metadata = get_metadata()
         
         texts = [data["text"] for data in metadata]
