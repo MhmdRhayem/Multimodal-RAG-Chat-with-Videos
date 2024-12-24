@@ -24,6 +24,11 @@ def select_embedding_model():
 @app.route("/create_vector_store",methods = ["POST"])
 def create_store():
     try:
-        pass
+        global table, embedder
+        if embedder is None:
+            return jsonify({"error": "No embedding model selected"}), 400
+        create_db_from_text_image_pairs(embedder)
+        table = get_table_from_db()
+        return table
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
