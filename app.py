@@ -20,3 +20,10 @@ def select_embedding_model():
         return jsonify({"message": f"{selected_embedding} embeddings selected"})
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
+
+@app.route("/create_vector_store",methods = ["POST"])
+def create_store():
+    try:
+        pass
+    except Exception as e:
+        return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
