@@ -36,3 +36,10 @@ def create_store():
 @app.route("/upload", methods=["POST"])
 def upload_video():
     pass
+
+@app.route("/generate_results", methods=["POST"])
+def generate_results():
+    try:
+        pass
+    except Exception as e:
+        return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
