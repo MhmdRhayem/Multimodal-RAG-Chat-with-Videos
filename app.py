@@ -25,12 +25,12 @@ def select_embedding_model():
 @app.route("/video_preprocessing", methods=["POST"])
 def video_preprocessing():
     try:
-        # extract_subtitles_from_video()
+        extract_subtitles_from_video()
         print("Done extracting subtitles from video")
         
         is_speech = contain_speech()
         if is_speech:
-            # extract_and_save_frames_and_metadata_with_speech()
+            extract_and_save_frames_and_metadata_with_speech()
             print("Done extracting frames and metadata with speech")
         else:
             extract_and_save_frames_and_metadata_without_speech()
