@@ -34,6 +34,7 @@ def video_preprocessing():
             print("Done extracting frames and metadata with speech")
         else:
             extract_and_save_frames_and_metadata_without_speech()
+            embedder = create_embedder("clip-image")
             print("Done extracting frames and metadata without speech")
         
         return jsonify({"message": "Video preprocessing completed"}), 200
@@ -51,10 +52,6 @@ def create_store():
         return table
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
-    
-@app.route("/upload", methods=["POST"])
-def upload_video():
-    pass
 
 @app.route("/generate_results", methods=["POST"])
 def generate_results():
