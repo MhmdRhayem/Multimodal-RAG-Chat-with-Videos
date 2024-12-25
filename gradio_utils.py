@@ -4,7 +4,6 @@ import shutil
 import os
 
 API_URL = "http://127.0.0.1:5000"
-UPLOADED_VIDEO_PATH = "./videos/video.mp4"
 HISTORY = ""
 
 def select_embedding(embedding_model):
@@ -52,7 +51,11 @@ def generate_results(query):
     global HISTORY
     data = {"query": query}
     print("Generating results ...")
-    description = requests.post(f"{API_URL}/answer_question", json=data)
+    response = requests.post(f"{API_URL}/answer_question", json=data)
+    result = response.json()
+
+    description = result["description"]
+    output_video_path = result["output_video_path"]
     
     HISTORY += f"Query: {query}\nResponse: {description}\n\n"
-    return [HISTORY, "./videos/video_temp.mp4"]
+    return [HISTORY, output_video_path]
