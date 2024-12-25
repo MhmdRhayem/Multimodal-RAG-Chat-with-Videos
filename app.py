@@ -68,13 +68,14 @@ def answer_question():
         if table is None:
             table = get_table_from_db()
         if embedder is None:
-            embedder = create_embedder("clip-text")
+            embedder = create_embedder("bridgetower")
         query = data["query"]
         input = {"table": table, "embedder": embedder, "query": query}
         print(f"Invoking Chain ")
         response = chain.invoke(input)
         description = response["description"]
-        return description, 200
+        output_video_path = response["output_video_path"]
+        return jsonify({"description": description, "output_video_path":output_video_path}), 200
         
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
