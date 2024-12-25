@@ -255,6 +255,33 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/vid
             cv2.imwrite(img_fpath, image)
             
             text = get_image_description_ollama(img_fpath)
+
+            metadata = {
+                "extracted_frame_path": img_fpath,
+                "text": text,
+                "video_segment_id": id,
+                "video_path": video_path,
+                "start_time_ms": start_time_ms,  # Start time before the mid time
+                "mid_time_ms": mid_time_ms,  # Exact mid time when the frame was extracted
+                "end_time_ms": end_time_ms,  # End time after the mid time
+            }
+
+            metadatas.append(metadata)
+
+        curr_frame += 1
+
+    # Save metadata
+
+    metadata_path = os.path.join(path_to_save_metadata, "metadata.json")
+
+    with open(metadata_path, "w", encoding="utf-8") as f:
+
+        json.dump(metadatas, f, indent=4)
+
+    print(f"Metadata saved to {metadata_path}")
+
+    print(f"Extracted {len(metadatas)} frames and metadata.")
+
             
 def get_image_description_ollama(image_path):
     content = """You are an assistant tasked with summarizing images for optimal retrieval. \
