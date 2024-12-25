@@ -101,10 +101,8 @@ def format_time(seconds, subtitle_format):
 
 def contain_speech(result_file="./videos/result.json", no_speech_prob=0.5, min_duration=1.0):
     try:
-        print("------------- Trying to open results file ------------- ")
         with open(result_file, "r", encoding="utf-8") as f:
             result = json.load(f)
-        print("------------- Results file opened ------------- ")
         segments = result["segments"]
         
         speech_count = 0
