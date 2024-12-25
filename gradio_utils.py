@@ -33,5 +33,13 @@ def save_video(video):
         return "Please upload a video."
 
 
+def upload_video(video):
+    save_video(video)
+    print("Video uploaded successfully.")
+    
+    print("Preprocessing video...")
+    response = requests.post(f"{API_URL}/video_preprocessing")
+    
+    
 def generate_results():
     pass
