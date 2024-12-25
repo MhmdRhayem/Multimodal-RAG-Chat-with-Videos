@@ -9,6 +9,8 @@ HISTORY = ""
 def select_embedding(embedding_model):
     data = {"embedding_model": embedding_model}
     response = requests.post(f"{API_URL}/select_embedding", json=data)
+    if response.status_code != 200:
+            return f"Error: {response.text}"
 
 def upload_video():
     pass
