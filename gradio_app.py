@@ -13,7 +13,7 @@ with gr.Blocks() as app:
         upload_button = gr.Button("Upload", interactive=False) 
     
     question_input = gr.Textbox(label="Ask a Question")
-    submit_button = gr.Button("Submit")
+    submit_button = gr.Button("Submit", interactive=True)
     
     video_output = gr.Video(label="Output Video")
 
@@ -29,14 +29,9 @@ with gr.Blocks() as app:
     upload_button.click(
         fn = upload_video,
         inputs=[video_input],
-        outputs = [output_text],
+        outputs = [output_text, submit_button],
     )
     
-    def handle_question_and_video(question, uploaded_video_path):
-        chat_response = f"Response to your question: '{question}'"
-        generated_video_path = "./videos/video.mp4"  # Replace with actual logic
-        return chat_response, generated_video_path
-
     submit_button.click(
         fn=generate_results,
         inputs=[question_input],
