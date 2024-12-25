@@ -1,13 +1,13 @@
 from langchain_core.embeddings import Embeddings
 from langchain_community.vectorstores.lancedb import LanceDB
-from typing import Any, Optional
+from typing import Any, Optional, List
 
 class MultimodalLanceDB(LanceDB):
     def __init__(
         self,
         connection=None,
         embedding=None,
-        uri="./lancedb",
+        uri="./vectorstore/lancedb",
         vector_key="vector",
         id_key="id",
         text_key="text",
