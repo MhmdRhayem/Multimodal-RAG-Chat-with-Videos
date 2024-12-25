@@ -20,4 +20,11 @@ with gr.Blocks() as app:
         outputs=[output_text],
         show_progress=True, 
     )
+    
+    upload_button.click(
+        fn = upload_video,
+        inputs=[video_input],
+        outputs = [output_text],
+    )
+    
 app.launch()
