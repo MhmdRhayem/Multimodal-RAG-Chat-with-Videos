@@ -6,7 +6,7 @@ This repository implements a Multi-Retrieval-Augmented Generation (MultiRAG) sys
 
 ## Features
 
-- **Video Upload and Processing**: Upload video files (`.mp4`, `.avi`, `.mov`, etc.) for content analysis and question answering.
+- **Video Upload and Processing**: Upload video files for content analysis and question answering.
 - **Multiple Embedding Models**: Supports `BridgETower` and `CLIP` for video embeddings.
 - **Vision Model Integration**: Uses `llava` (via Ollama) as the vision-language model to generate transcripts from videos.
 - **Query Response**: Generates concise text answers along with short video clips corresponding to the query.
