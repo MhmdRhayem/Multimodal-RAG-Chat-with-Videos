@@ -12,3 +12,5 @@ def select_embedding():
 def upload_video():
     pass
 
+def generate_results():
+    pass
