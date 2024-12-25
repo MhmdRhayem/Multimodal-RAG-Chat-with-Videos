@@ -7,3 +7,9 @@ with gr.Blocks() as app:
         ["huggingface", "ollama", "openai"], label="Select Embedding Model"
     )
     
+    with gr.Blocks() as app:
+        gr.Markdown("### RAG Document Question-Answering System")
+
+        embedding_choice = gr.Dropdown(
+            ["huggingface", "ollama", "openai"], label="Select Embedding Model"
+        )
