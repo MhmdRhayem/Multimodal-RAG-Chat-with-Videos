@@ -57,7 +57,7 @@ def create_store():
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
 
 @app.route("/answer_question", methods=["POST"])
-def generate_results():
+def answer_question():
     try:
         global chain, table, embedder
         data = request.json
@@ -68,9 +68,13 @@ def generate_results():
         if table is None:
             table = get_table_from_db()
         if embedder is None:
-            create_embedder("clip-image")
+            embedder = create_embedder("clip-text")
         query = data["query"]
-        
+        input = {"table": table, "embedder": embedder, "query": query}
+        print(f"Invoking Chain ")
+        response = chain.invoke(input)
+        description = response["description"]
+        return description, 200
         
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
