@@ -21,6 +21,13 @@ def select_embedding_model():
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
 
+@app.route("/video_preprocessing", methods=["POST"])
+def video_preprocessing():
+    try:
+        pass
+    except Exception as e:
+        return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
+
 @app.route("/create_vector_store",methods = ["POST"])
 def create_store():
     try:
