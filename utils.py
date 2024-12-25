@@ -7,6 +7,9 @@ from langchain_core.runnables import (
     RunnableLambda
 )
 import warnings
+import json
+from vectorstore.vectorstore import *
+
 warnings.filterwarnings("ignore")
 
 def create_embedder(embedding_model="bridgetower"):
@@ -40,7 +43,7 @@ def create_db_from_text_image_pairs(embedder):
         texts = [data["text"] for data in metadata]
         image_paths = [data["extracted_frame_path"] for data in metadata]
         
-        db = lancedb.connect("./lancedb")
+        db = lancedb.connect("./vectorstore/lancedb")
         _ = MultimodalLanceDB.from_text_image_pairs(
             texts=texts,
             image_paths=image_paths,
@@ -58,7 +61,7 @@ def create_db_from_text_image_pairs(embedder):
 
 def get_table_from_db():
     try:
-        db = lancedb.connect("./lancedb")
+        db = lancedb.connect("./vectorstore/lancedb")
         table = db.open_table("MULTIRAGTABLE")
         print("Table loaded successfully.")
         return table
