@@ -15,7 +15,7 @@ def select_embedding(embedding_model):
     if response.status_code != 200:
             return f"Error: {response.text}"
     
-    return f"Embedding model '{embedding_model}' selected."
+    return [f"Embedding model '{embedding_model}' selected.", gr.update(interactive=True)]
 
 def save_video(video):
     video_folder = "./videos"
