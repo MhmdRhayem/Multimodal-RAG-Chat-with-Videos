@@ -17,10 +17,21 @@ def select_embedding(embedding_model):
     return f"Embedding model '{embedding_model}' selected."
 
 def save_video(video):
-    pass
+    video_folder = "./videos"
+    os.makedirs(video_folder, exist_ok=True)
 
-def upload_video():
-    pass
+    # `video` is the path to the uploaded file
+    if video is not None:
+        video_name = "video.mp4"
+        video_path = os.path.join(video_folder, video_name)
+        
+        # Save the video file in the designated folder
+        shutil.move(video, video_path)  # Move the uploaded video to the folder
+
+        return f"Video '{video_name}' saved successfully at {video_path}."
+    else:
+        return "Please upload a video."
+
 
 def generate_results():
     pass
