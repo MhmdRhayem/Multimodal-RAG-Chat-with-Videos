@@ -10,6 +10,7 @@ import warnings
 import json
 from vectorstore.vectorstore import *
 import ollama
+from moviepy import VideoFileClip
 
 warnings.filterwarnings("ignore")
 
@@ -120,11 +121,13 @@ def prompt_processing(input):
 def LVLM(input):
     message = input["message"]
     midtime = input["midtime"]
-    response = ollama.chat(model="llava:7b", messages=[message])
+    # response = ollama.chat(model="llava:7b", messages=[message])
+    response = {"message":{"content": "dumb content"}}
     description = response["message"]["content"]
     image = message["images"][0]
     print("Done Generating Description")
-    return image, description, midtime
+    output = {"image": image, "description":description, "midtime" : midtime}
+    return output
 
 def generate_video(input):
     midtime = input["midtime"]
@@ -133,7 +136,7 @@ def generate_video(input):
     play_before_sec = 3
     play_after_sec = 3
     input["video_path"] = video_path
-
+    input["output_video_path"] = output_video_path
     try:
         timestamp_in_sec = int(float(midtime) / 1000)
         print(timestamp_in_sec)
