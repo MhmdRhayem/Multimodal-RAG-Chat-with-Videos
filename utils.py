@@ -121,8 +121,7 @@ def prompt_processing(input):
 def LVLM(input):
     message = input["message"]
     midtime = input["midtime"]
-    # response = ollama.chat(model="llava:7b", messages=[message])
-    response = {"message":{"content": "dumb content"}}
+    response = ollama.chat(model="llava:7b", messages=[message])
     description = response["message"]["content"]
     image = message["images"][0]
     print("Done Generating Description")
