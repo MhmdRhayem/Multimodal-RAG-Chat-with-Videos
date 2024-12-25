@@ -2,7 +2,6 @@ from utils import *
 from videos.video_preprocessing import *
 from flask import Flask, request, jsonify
 import os
-import gradio as gr
 
 app = Flask(__name__)
 chain = None
@@ -26,15 +25,14 @@ def select_embedding_model():
 @app.route("/video_preprocessing", methods=["POST"])
 def video_preprocessing():
     try:
-        extract_subtitles_from_video()
+        # extract_subtitles_from_video()
         print("Done extracting subtitles from video")
         
         is_speech = contain_speech()
         if is_speech:
-            extract_and_save_frames_and_metadata_with_speech()
+            # extract_and_save_frames_and_metadata_with_speech()
             print("Done extracting frames and metadata with speech")
         else:
-            gr.Info("Hang on, this might take some time ...")
             extract_and_save_frames_and_metadata_without_speech()
             embedder = create_embedder("clip-image")
             print("Done extracting frames and metadata without speech")
@@ -49,9 +47,11 @@ def create_store():
         global table, embedder
         if embedder is None:
             return jsonify({"error": "No embedding model selected"}), 400
+        print("Creating vector store ...")
         create_db_from_text_image_pairs(embedder)
+        print("Getting table ...")
         table = get_table_from_db()
-        return table
+        return jsonify({"message": "Vector store created"}), 200
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
 
