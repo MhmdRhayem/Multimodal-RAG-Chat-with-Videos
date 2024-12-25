@@ -1,4 +1,5 @@
 from utils import *
+from videos.video_preprocessing import *
 from flask import Flask, request, jsonify
 import os
 
@@ -24,7 +25,18 @@ def select_embedding_model():
 @app.route("/video_preprocessing", methods=["POST"])
 def video_preprocessing():
     try:
-        pass
+        extract_subtitles_from_video()
+        print("Done extracting subtitles from video")
+        
+        is_speech = is_speech()
+        if is_speech:
+            extract_and_save_frames_and_metadata_with_speech()
+            print("Done extracting frames and metadata with speech")
+        else:
+            extract_and_save_frames_and_metadata_without_speech()
+            print("Done extracting frames and metadata without speech")
+        
+        return jsonify({"message": "Video preprocessing completed"}), 200
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
 
