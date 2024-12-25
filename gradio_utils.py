@@ -28,23 +28,21 @@ def save_video(video):
         
         # Save the video file in the designated folder
         shutil.move(video, video_path)  # Move the uploaded video to the folder
-        output = f"Video '{video_name}' saved successfully at {video_path}."
-        print(output)
-        return output
+        return f"Video '{video_name}' saved successfully at {video_path}."
     else:
         return "Please upload a video."
 
 
 def upload_video(video):
     save_video(video)
-    Print("Video uploaded successfully.")
+    print("Video uploaded successfully.")
     
     gr.Info("Wait while preprocessing the video ...")
-    Print("Preprocessing video...")
+    print("Preprocessing video...")
     response = requests.post(f"{API_URL}/video_preprocessing")
     
     gr.Info("Wait while creating the vector store ...")
-    Print("Creating vector store...")
+    print("Creating vector store...")
     response = requests.post(f"{API_URL}/create_vector_store")
     
     return "Video uploaded and preprocessed successfully."
