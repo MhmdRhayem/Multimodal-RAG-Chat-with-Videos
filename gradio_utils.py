@@ -36,12 +36,14 @@ def save_video(video):
 
 
 def upload_video(video):
-    # status = gr.update("Output", "Uploading video...")
     save_video(video)
-    status = "Video uploaded successfully."
+    Print("Video uploaded successfully.")
     
-    print("Preprocessing video...")
+    gr.Info("Wait while preprocessing the video ...")
+    Print("Preprocessing video...")
     response = requests.post(f"{API_URL}/video_preprocessing")
+    
+    return status
     
     
 def generate_results():
