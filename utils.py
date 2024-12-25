@@ -9,6 +9,7 @@ from langchain_core.runnables import (
 import warnings
 import json
 from vectorstore.vectorstore import *
+import ollama
 
 warnings.filterwarnings("ignore")
 
@@ -68,7 +69,10 @@ def get_table_from_db():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-def retreive_results(table, embedder, query):
+def retreive_results(input):
+    table = input["table"]
+    embedder = input["embedder"]
+    query = input["query"]
     try:
         if table is None:
             get_table_from_db()
@@ -83,7 +87,7 @@ def retreive_results(table, embedder, query):
 def prompt_processing(input):
     # Get the retrieved results and user's query
     retrieved_results = input['retrieved_results']
-    user_query = input['user_query']
+    user_query = input['user_query']['query']
     
     retrieved_result = retrieved_results[0]
     prompt_template = (
