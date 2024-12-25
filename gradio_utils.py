@@ -57,7 +57,7 @@ def generate_results(query):
     gr.Info("Generating results ...")
     response = requests.post(f"{API_URL}/answer_question", json=data)
     result = response.json()
-
+    print(f"RESULT: {result}")
     description = result["description"]
     output_video_path = result["output_video_path"]
     
