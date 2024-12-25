@@ -55,10 +55,12 @@ def create_store():
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
 
-@app.route("/generate_results", methods=["POST"])
+@app.route("/answer_question", methods=["POST"])
 def generate_results():
     try:
-        pass
+        data = request.json
+        if "query" not in data:
+            return jsonify({"error": "No query specified"}), 400
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
     
