@@ -43,3 +43,6 @@ def generate_results():
         pass
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
+    
+if __name__ == "__main__":
+    app.run(debug=True)
