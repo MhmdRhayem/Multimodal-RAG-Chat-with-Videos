@@ -219,7 +219,8 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/vid
     
     if not os.path.exists(path_to_save_metadata):
         os.makedirs(path_to_save_metadata)
-        
+    
+    print("Extracting frames and metadata without speech...")
     # Load Video
     video = cv2.VideoCapture(video_path)
     
@@ -252,6 +253,8 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/vid
             img_fname = f"frame_{id}.jpg"
             img_fpath = os.path.join(path_to_save_frames, img_fname)
             cv2.imwrite(img_fpath, image)
+            
+            text = get_image_description_ollama(img_fpath)
             
 def get_image_description_ollama(image_path):
     content = """You are an assistant tasked with summarizing images for optimal retrieval. \
