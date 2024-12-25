@@ -23,7 +23,7 @@ This repository implements a Multi-Retrieval-Augmented Generation (MultiRAG) sys
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/MhmdRhayem/MultiRAG-Chat-with-Videos
+   git clone https://github.com/MhmdRhayem/Multimodal-RAG-Chat-with-Videos
    ```
 
 2. Install dependencies:
