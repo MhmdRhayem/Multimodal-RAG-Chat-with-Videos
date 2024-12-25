@@ -7,13 +7,16 @@ API_URL = "http://127.0.0.1:5000"
 HISTORY = ""
 
 def select_embedding(embedding_model):
+    gr.Info("Selecting embedding model ...")
     data = {"embedding_model": embedding_model}
     response = requests.post(f"{API_URL}/select_embedding", json=data)
     
     print("Embedding model selected.")
     if response.status_code != 200:
             return f"Error: {response.text}"
+        
     
+    gr.Info("Embedding model selected.")
     return [f"Embedding model '{embedding_model}' selected.", gr.update(interactive=True)]
 
 def save_video(video):
@@ -44,13 +47,14 @@ def upload_video(video):
     print("Creating vector store...")
     response = requests.post(f"{API_URL}/create_vector_store")
     
+    gr.Info("Ready to ask a question.")
     return ["Video uploaded and preprocessed successfully.", gr.update(interactive=True)]
     
     
 def generate_results(query):
     global HISTORY
     data = {"query": query}
-    print("Generating results ...")
+    gr.Info("Generating results ...")
     response = requests.post(f"{API_URL}/answer_question", json=data)
     result = response.json()
 
@@ -58,4 +62,5 @@ def generate_results(query):
     output_video_path = result["output_video_path"]
     
     HISTORY += f"Query: {query}\nResponse: {description}\n\n"
+    gr.Info("Results generated.")
     return [HISTORY, output_video_path]
