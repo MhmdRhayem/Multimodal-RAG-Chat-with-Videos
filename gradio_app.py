@@ -38,7 +38,7 @@ with gr.Blocks() as app:
         return chat_response, generated_video_path
 
     submit_button.click(
-        fn=handle_question_and_video,
+        fn=generate_results,
         inputs=[question_input],
         outputs=[output_text, video_output],
     )
