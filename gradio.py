@@ -11,5 +11,5 @@ with gr.Blocks() as app:
         gr.Markdown("### RAG Document Question-Answering System")
 
         embedding_choice = gr.Dropdown(
-            ["huggingface", "ollama", "openai"], label="Select Embedding Model"
+            ["bridgetower","clip-text","clip-image"], label="Select Embedding Model"
         )
