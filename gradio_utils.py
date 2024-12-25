@@ -1,3 +1,4 @@
+import gradio as gr
 import requests
 import shutil
 import os
@@ -27,15 +28,17 @@ def save_video(video):
         
         # Save the video file in the designated folder
         shutil.move(video, video_path)  # Move the uploaded video to the folder
-
-        return f"Video '{video_name}' saved successfully at {video_path}."
+        output = f"Video '{video_name}' saved successfully at {video_path}."
+        print(output)
+        return output
     else:
         return "Please upload a video."
 
 
 def upload_video(video):
+    # status = gr.update("Output", "Uploading video...")
     save_video(video)
-    print("Video uploaded successfully.")
+    status = "Video uploaded successfully."
     
     print("Preprocessing video...")
     response = requests.post(f"{API_URL}/video_preprocessing")
