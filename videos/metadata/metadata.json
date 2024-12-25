@@ -1,0 +1,202 @@
+[
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_0.jpg",
+        "transcript": " As I look back on the mission that we've had here on the International Space Station,",
+        "video_segment_id": 0,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 0.0,
+        "mid_time_ms": 4390.0,
+        "end_time_ms": 8780.0,
+        "text": " As I look back on the mission that we've had here on the International Space Station,  I'm proud to have been a part of much of the science activities that happened over the  last two months."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_1.jpg",
+        "transcript": " I'm proud to have been a part of much of the science activities that happened over the",
+        "video_segment_id": 1,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 8780.0,
+        "mid_time_ms": 11050.0,
+        "end_time_ms": 13320.0,
+        "text": " As I look back on the mission that we've had here on the International Space Station,  I'm proud to have been a part of much of the science activities that happened over the  last two months.  The view is always amazing though."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_2.jpg",
+        "transcript": " last two months.",
+        "video_segment_id": 2,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 13320.0,
+        "mid_time_ms": 13820.0,
+        "end_time_ms": 14320.0,
+        "text": " As I look back on the mission that we've had here on the International Space Station,  I'm proud to have been a part of much of the science activities that happened over the  last two months.  The view is always amazing though.  I didn't think I would do another spacewalk and to now have the chance to have done four"
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_3.jpg",
+        "transcript": " The view is always amazing though.",
+        "video_segment_id": 3,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 14320.0,
+        "mid_time_ms": 15260.0,
+        "end_time_ms": 16200.0,
+        "text": " As I look back on the mission that we've had here on the International Space Station,  I'm proud to have been a part of much of the science activities that happened over the  last two months.  The view is always amazing though.  I didn't think I would do another spacewalk and to now have the chance to have done four  more was just icing on the cake for a wonderful mission."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_4.jpg",
+        "transcript": " I didn't think I would do another spacewalk and to now have the chance to have done four",
+        "video_segment_id": 4,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 16200.0,
+        "mid_time_ms": 18740.0,
+        "end_time_ms": 21280.0,
+        "text": " I'm proud to have been a part of much of the science activities that happened over the  last two months.  The view is always amazing though.  I didn't think I would do another spacewalk and to now have the chance to have done four  more was just icing on the cake for a wonderful mission.  It's hard to put into words just what it was like to be a part of this expedition, Expedition"
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_5.jpg",
+        "transcript": " more was just icing on the cake for a wonderful mission.",
+        "video_segment_id": 5,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 21280.0,
+        "mid_time_ms": 23200.0,
+        "end_time_ms": 25120.0,
+        "text": " last two months.  The view is always amazing though.  I didn't think I would do another spacewalk and to now have the chance to have done four  more was just icing on the cake for a wonderful mission.  It's hard to put into words just what it was like to be a part of this expedition, Expedition  63."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_6.jpg",
+        "transcript": " It's hard to put into words just what it was like to be a part of this expedition, Expedition",
+        "video_segment_id": 6,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 25120.0,
+        "mid_time_ms": 31300.000000000004,
+        "end_time_ms": 37480.00000000001,
+        "text": " The view is always amazing though.  I didn't think I would do another spacewalk and to now have the chance to have done four  more was just icing on the cake for a wonderful mission.  It's hard to put into words just what it was like to be a part of this expedition, Expedition  63.  It'll be kind of a memory that will last a lifetime for me."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_7.jpg",
+        "transcript": " 63.",
+        "video_segment_id": 7,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 37480.00000000001,
+        "mid_time_ms": 37980.00000000001,
+        "end_time_ms": 38480.00000000001,
+        "text": " I didn't think I would do another spacewalk and to now have the chance to have done four  more was just icing on the cake for a wonderful mission.  It's hard to put into words just what it was like to be a part of this expedition, Expedition  63.  It'll be kind of a memory that will last a lifetime for me.  It's been a true honor."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_8.jpg",
+        "transcript": " It'll be kind of a memory that will last a lifetime for me.",
+        "video_segment_id": 8,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 38480.00000000001,
+        "mid_time_ms": 40380.0,
+        "end_time_ms": 42280.0,
+        "text": " more was just icing on the cake for a wonderful mission.  It's hard to put into words just what it was like to be a part of this expedition, Expedition  63.  It'll be kind of a memory that will last a lifetime for me.  It's been a true honor.  Dragon SpaceX, Undock sequence commanded."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_9.jpg",
+        "transcript": " It's been a true honor.",
+        "video_segment_id": 9,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 42280.0,
+        "mid_time_ms": 43200.0,
+        "end_time_ms": 44120.00000000001,
+        "text": " It's hard to put into words just what it was like to be a part of this expedition, Expedition  63.  It'll be kind of a memory that will last a lifetime for me.  It's been a true honor.  Dragon SpaceX, Undock sequence commanded.  The roster's looking good."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_10.jpg",
+        "transcript": " Dragon SpaceX, Undock sequence commanded.",
+        "video_segment_id": 10,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 44120.00000000001,
+        "mid_time_ms": 45500.0,
+        "end_time_ms": 46880.0,
+        "text": " 63.  It'll be kind of a memory that will last a lifetime for me.  It's been a true honor.  Dragon SpaceX, Undock sequence commanded.  The roster's looking good.  The hardest part was getting us launched, but the most important part is bringing us"
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_11.jpg",
+        "transcript": " The roster's looking good.",
+        "video_segment_id": 11,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 46880.0,
+        "mid_time_ms": 47620.0,
+        "end_time_ms": 48360.0,
+        "text": " It'll be kind of a memory that will last a lifetime for me.  It's been a true honor.  Dragon SpaceX, Undock sequence commanded.  The roster's looking good.  The hardest part was getting us launched, but the most important part is bringing us  home."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_12.jpg",
+        "transcript": " The hardest part was getting us launched, but the most important part is bringing us",
+        "video_segment_id": 12,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 48360.0,
+        "mid_time_ms": 50440.0,
+        "end_time_ms": 52520.0,
+        "text": " It's been a true honor.  Dragon SpaceX, Undock sequence commanded.  The roster's looking good.  The hardest part was getting us launched, but the most important part is bringing us  home.  I've been telling Daddy we love you."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_13.jpg",
+        "transcript": " home.",
+        "video_segment_id": 13,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 52520.0,
+        "mid_time_ms": 53020.0,
+        "end_time_ms": 53520.0,
+        "text": " Dragon SpaceX, Undock sequence commanded.  The roster's looking good.  The hardest part was getting us launched, but the most important part is bringing us  home.  I've been telling Daddy we love you.  Hurry home so we can go get my dog."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_14.jpg",
+        "transcript": " I've been telling Daddy we love you.",
+        "video_segment_id": 14,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 53520.0,
+        "mid_time_ms": 56540.0,
+        "end_time_ms": 59560.0,
+        "text": " The roster's looking good.  The hardest part was getting us launched, but the most important part is bringing us  home.  I've been telling Daddy we love you.  Hurry home so we can go get my dog.  Flashdown."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_15.jpg",
+        "transcript": " Hurry home so we can go get my dog.",
+        "video_segment_id": 15,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 59560.0,
+        "mid_time_ms": 63020.0,
+        "end_time_ms": 66480.0,
+        "text": " The hardest part was getting us launched, but the most important part is bringing us  home.  I've been telling Daddy we love you.  Hurry home so we can go get my dog.  Flashdown.  Welcome back to planet Earth and thanks for flying SpaceX."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_16.jpg",
+        "transcript": " Flashdown.",
+        "video_segment_id": 16,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 66480.0,
+        "mid_time_ms": 66980.0,
+        "end_time_ms": 67480.0,
+        "text": " home.  I've been telling Daddy we love you.  Hurry home so we can go get my dog.  Flashdown.  Welcome back to planet Earth and thanks for flying SpaceX.  It's truly our honor and privilege."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_17.jpg",
+        "transcript": " Welcome back to planet Earth and thanks for flying SpaceX.",
+        "video_segment_id": 17,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 67480.0,
+        "mid_time_ms": 69180.0,
+        "end_time_ms": 70880.0,
+        "text": " I've been telling Daddy we love you.  Hurry home so we can go get my dog.  Flashdown.  Welcome back to planet Earth and thanks for flying SpaceX.  It's truly our honor and privilege.  SpaceX dads are back on Earth after a 19 hour return journey from space."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_18.jpg",
+        "transcript": " It's truly our honor and privilege.",
+        "video_segment_id": 18,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 70880.0,
+        "mid_time_ms": 72140.0,
+        "end_time_ms": 73400.0,
+        "text": " Hurry home so we can go get my dog.  Flashdown.  Welcome back to planet Earth and thanks for flying SpaceX.  It's truly our honor and privilege.  SpaceX dads are back on Earth after a 19 hour return journey from space."
+    },
+    {
+        "extracted_frame_path": "./videos/extracted_frames/frame_19.jpg",
+        "transcript": " SpaceX dads are back on Earth after a 19 hour return journey from space.",
+        "video_segment_id": 19,
+        "video_path": "./videos/video.mp4",
+        "start_time_ms": 73400.0,
+        "mid_time_ms": 81720.0,
+        "end_time_ms": 90040.0,
+        "text": " Flashdown.  Welcome back to planet Earth and thanks for flying SpaceX.  It's truly our honor and privilege.  SpaceX dads are back on Earth after a 19 hour return journey from space."
+    }
+]
