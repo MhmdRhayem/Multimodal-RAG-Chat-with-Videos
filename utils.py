@@ -6,6 +6,8 @@ from langchain_core.runnables import (
     RunnablePassthrough, 
     RunnableLambda
 )
+import warnings
+warnings.filterwarnings("ignore")
 
 def create_embedder(embedding_model="bridgetower"):
     try:
