@@ -2,7 +2,7 @@ import gradio as gr
 from gradio_utils import *
 
 with gr.Blocks() as app:
-    gr.Markdown("### RAG Chat with Videos")
+    gr.Markdown("### MultiRAG Chat with Videos")
 
     embedding_choice = gr.Dropdown(
         ["bridgetower", "clip-text", "clip-image"], label="Embedding Model", value= None
