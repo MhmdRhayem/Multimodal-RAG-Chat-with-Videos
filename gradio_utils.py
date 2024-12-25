@@ -43,7 +43,11 @@ def upload_video(video):
     Print("Preprocessing video...")
     response = requests.post(f"{API_URL}/video_preprocessing")
     
-    return status
+    gr.Info("Wait while creating the vector store ...")
+    Print("Creating vector store...")
+    response = requests.post(f"{API_URL}/create_vector_store")
+    
+    return "Video uploaded and preprocessed successfully."
     
     
 def generate_results():
