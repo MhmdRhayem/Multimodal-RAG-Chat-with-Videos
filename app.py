@@ -2,6 +2,7 @@ from utils import *
 from videos.video_preprocessing import *
 from flask import Flask, request, jsonify
 import os
+import gradio as gr
 
 app = Flask(__name__)
 chain = None
@@ -28,11 +29,12 @@ def video_preprocessing():
         extract_subtitles_from_video()
         print("Done extracting subtitles from video")
         
-        is_speech = is_speech()
+        is_speech = contain_speech()
         if is_speech:
             extract_and_save_frames_and_metadata_with_speech()
             print("Done extracting frames and metadata with speech")
         else:
+            gr.Info("Hang on, this might take some time ...")
             extract_and_save_frames_and_metadata_without_speech()
             embedder = create_embedder("clip-image")
             print("Done extracting frames and metadata without speech")
