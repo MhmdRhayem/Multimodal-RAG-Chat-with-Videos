@@ -7,6 +7,11 @@ with gr.Blocks() as app:
     embedding_choice = gr.Dropdown(
         ["bridgetower", "clip-text", "clip-image"], label="Embedding Model", value= None
     )
+    
+    with gr.Row():
+        video_input = gr.Video(label="Upload a Video")
+        upload_button = gr.Button("Upload") 
+    
     output_text = gr.Textbox(label="Output", visible=True)
     
     embedding_choice.change(
