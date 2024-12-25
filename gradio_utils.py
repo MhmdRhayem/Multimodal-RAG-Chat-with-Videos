@@ -48,5 +48,6 @@ def upload_video(video):
     return "Video uploaded and preprocessed successfully."
     
     
-def generate_results():
-    pass
+def generate_results(query):
+    data = {"query": query}
+    response = requests.post(f"{API_URL}/answer_question", json=data)
