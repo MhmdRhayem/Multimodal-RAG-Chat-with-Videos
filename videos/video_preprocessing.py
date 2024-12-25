@@ -54,7 +54,7 @@ def extract_subtitles_from_video(video_path="./videos/video.mp4", subtitle_forma
         print("Transcribing audio using Whisper...")
         result = model.transcribe(audio_path)
         
-        results_file = os.path.join(results_path, "results.json")
+        result_file = os.path.join(results_path, "result.json")
         
         with open(result_file, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=4)
@@ -99,11 +99,12 @@ def format_time(seconds, subtitle_format):
     elif subtitle_format == "vtt":
         return f"{hours:02}:{minutes:02}:{int(seconds):02}.{milliseconds:03}"
 
-def is_speech(result_file="./videos/result.json", no_speech_prob=0.5, min_duration=1.0):
+def contain_speech(result_file="./videos/result.json", no_speech_prob=0.5, min_duration=1.0):
     try:
+        print("------------- Trying to open results file ------------- ")
         with open(result_file, "r", encoding="utf-8") as f:
             result = json.load(f)
-
+        print("------------- Results file opened ------------- ")
         segments = result["segments"]
         
         speech_count = 0
