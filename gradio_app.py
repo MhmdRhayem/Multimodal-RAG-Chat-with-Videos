@@ -10,7 +10,7 @@ with gr.Blocks() as app:
     
     with gr.Row():
         video_input = gr.Video(label="Upload a Video")
-        upload_button = gr.Button("Upload") 
+        upload_button = gr.Button("Upload", interactive=False) 
     
     question_input = gr.Textbox(label="Ask a Question")
     submit_button = gr.Button("Submit")
@@ -22,7 +22,7 @@ with gr.Blocks() as app:
     embedding_choice.change(
         fn=select_embedding,
         inputs=[embedding_choice],
-        outputs=[output_text],
+        outputs=[output_text, upload_button],
         show_progress=True, 
     )
     
