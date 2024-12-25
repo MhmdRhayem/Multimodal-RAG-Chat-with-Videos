@@ -12,6 +12,11 @@ with gr.Blocks() as app:
         video_input = gr.Video(label="Upload a Video")
         upload_button = gr.Button("Upload") 
     
+    question_input = gr.Textbox(label="Ask a Question")
+    submit_button = gr.Button("Submit")
+    
+    video_output = gr.Video(label="Output Video")
+
     output_text = gr.Textbox(label="Output", visible=True)
     
     embedding_choice.change(
@@ -25,6 +30,17 @@ with gr.Blocks() as app:
         fn = upload_video,
         inputs=[video_input],
         outputs = [output_text],
+    )
+    
+    def handle_question_and_video(question, uploaded_video_path):
+        chat_response = f"Response to your question: '{question}'"
+        generated_video_path = "./videos/video.mp4"  # Replace with actual logic
+        return chat_response, generated_video_path
+
+    submit_button.click(
+        fn=handle_question_and_video,
+        inputs=[question_input],
+        outputs=[output_text, video_output],
     )
     
 app.launch()
