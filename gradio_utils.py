@@ -16,6 +16,9 @@ def select_embedding(embedding_model):
     
     return f"Embedding model '{embedding_model}' selected."
 
+def save_video(video):
+    pass
+
 def upload_video():
     pass
 
