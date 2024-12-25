@@ -51,6 +51,7 @@ def create_store():
         create_db_from_text_image_pairs(embedder)
         print("Getting table ...")
         table = get_table_from_db()
+        print(table)
         return jsonify({"message": "Vector store created"}), 200
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
@@ -58,9 +59,19 @@ def create_store():
 @app.route("/answer_question", methods=["POST"])
 def generate_results():
     try:
+        global chain, table, embedder
         data = request.json
         if "query" not in data:
             return jsonify({"error": "No query specified"}), 400
+        if chain is None:
+            chain = create_multirag_chain()
+        if table is None:
+            table = get_table_from_db()
+        if embedder is None:
+            create_embedder("clip-image")
+        query = data["query"]
+        
+        
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred: {e}"}), 500
     
