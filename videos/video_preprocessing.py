@@ -210,7 +210,7 @@ def augment_transcripts(trans_arr, n=7):
     ]
     return updated_trans_arr
 
-def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/no_speech.mp4",results_path="./videos/result.json",num_of_extracted_frames_per_second=0.5):
+def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/video.mp4",results_path="./videos/result.json",num_of_extracted_frames_per_second=0.5):
     path_to_save_frames = "./videos/extracted_frames"
     path_to_save_metadata = "./videos/metadata"
     
