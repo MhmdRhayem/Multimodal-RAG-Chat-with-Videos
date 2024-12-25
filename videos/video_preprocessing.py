@@ -252,7 +252,7 @@ def extract_and_save_frames_and_metadata_without_speech(video_path="./videos/vid
             
             img_fname = f"frame_{id}.jpg"
             img_fpath = os.path.join(path_to_save_frames, img_fname)
-            cv2.imwrite(img_fpath, image)
+            cv2.imwrite(img_fpath, frame)
             
             text = get_image_description_ollama(img_fpath)
 
