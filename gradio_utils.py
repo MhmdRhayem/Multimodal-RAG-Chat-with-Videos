@@ -45,9 +45,14 @@ def upload_video(video):
     print("Creating vector store...")
     response = requests.post(f"{API_URL}/create_vector_store")
     
-    return "Video uploaded and preprocessed successfully."
+    return ["Video uploaded and preprocessed successfully.", gr.update(interactive=True)]
     
     
 def generate_results(query):
+    global HISTORY
     data = {"query": query}
-    response = requests.post(f"{API_URL}/answer_question", json=data)
+    print("Generating results ...")
+    description = requests.post(f"{API_URL}/answer_question", json=data)
+    
+    HISTORY += f"Query: {query}\nResponse: {description}\n\n"
+    return [HISTORY, "./videos/video_temp.mp4"]
